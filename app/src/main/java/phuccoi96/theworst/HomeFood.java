@@ -25,6 +25,7 @@ import com.squareup.picasso.Picasso;
 import phuccoi96.theworst.Common.Common;
 import phuccoi96.theworst.Interface.ItemClickListener;
 import phuccoi96.theworst.Model.Food;
+import phuccoi96.theworst.Model.FoodList;
 import phuccoi96.theworst.ViewHolder.MenuViewFoodHolder;
 import phuccoi96.theworst.ViewHolder.MenuViewHolder;
 
@@ -103,14 +104,12 @@ public class HomeFood extends AppCompatActivity implements NavigationView.OnNavi
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 
-                        //Click ListView
-                        //Toast.makeText(Home.this,"hahaha"+clickitem.getName(),Toast.LENGTH_SHORT).show();
+                        //Get FoodID and send to new activity
+                        Intent foodList = new Intent(HomeFood.this, Foodlist.class);
+                        //Food o day la key cua food_in_detail
+                        foodList.putExtra("Food",adapter.getRef(position).getKey());
 
-
-                        //Start new activity
-                        Intent placeDetail = new Intent(HomeFood.this,PlaceDetail.class);
-                        placeDetail.putExtra("PlaceId",adapter.getRef(position).getKey()); //send Place ID to new activity
-                        startActivity(placeDetail);
+                        startActivity(foodList);
 
                     }
                 });

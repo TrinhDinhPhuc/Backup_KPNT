@@ -9,30 +9,30 @@ import phuccoi96.theworst.Interface.ItemClickListener;
 import phuccoi96.theworst.R;
 
 /**
- * Created by USER on 1/14/2018.
+ * Created by USER on 1/18/2018.
  */
 
-public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView txtMenuName;
-    public ImageView imageView;
+    public TextView food_name;
+    public ImageView food_image;
 
     private ItemClickListener itemClickListener;
-    public MenuViewHolder(View itemView) {
-        super(itemView);
-        //////////////////////////ko chac R androidideal
-        txtMenuName = (TextView)itemView.findViewById(R.id.menu_name);
-        imageView = (ImageView)itemView.findViewById(R.id.menu_image);
-        itemView.setOnClickListener(this);
-    }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
 
+    public FoodViewHolder(View itemView) {
+        super(itemView);
+
+        food_name = (TextView)itemView.findViewById(R.id.food_name);
+        food_image = (ImageView)itemView.findViewById(R.id.food_image);
+        itemView.setOnClickListener(this);
+    }
+
     @Override
     public void onClick(View view) {
-
         itemClickListener.onClick(view,getAdapterPosition(),false);
     }
 }
