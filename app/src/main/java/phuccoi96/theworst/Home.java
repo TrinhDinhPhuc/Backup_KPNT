@@ -152,12 +152,13 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_menu) {
-            // Handle the camera action
-        } else if (id == R.id.nav_place) {
 
             Intent homeIntent = new Intent(Home.this,HomeFood.class);
             startActivity(homeIntent);
             finish();
+
+
+        } else if (id == R.id.nav_place) {
 
 
 
