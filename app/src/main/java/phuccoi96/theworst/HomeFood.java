@@ -151,11 +151,8 @@ public class HomeFood extends AppCompatActivity implements NavigationView.OnNavi
 
         if (id == R.id.nav_menu) {
             // Handle the camera action
-        } else if (id == R.id.nav_place) {
+        } else if (id == R.id.nav_food) {
 
-        } else if (id == R.id.nav_cart) {
-
-        } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_log_out) {
 
