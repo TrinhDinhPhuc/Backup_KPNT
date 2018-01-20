@@ -160,9 +160,9 @@ public class Home extends AppCompatActivity
 
         } else if (id == R.id.nav_food) {
 
-//            Intent sssss = new Intent(Home.this,sssssss.class);
-//            startActivity(sssss);
-//            finish();
+            Intent activity_GGMAP = new Intent(Home.this,activity_GGMAP.class);
+            startActivity(activity_GGMAP);
+            finish();
 
         } else if (id == R.id.nav_log_out) {
 

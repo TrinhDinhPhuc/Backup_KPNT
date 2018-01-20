@@ -3,6 +3,7 @@
     package="phuccoi96.theworst">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -25,6 +26,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".NumberActivity"
+            android:label="Numbers"
+            android:theme="@style/NumberTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".FamilyActivity"
+            android:label="Family"
+            android:theme="@style/FamilyTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".PhraseActivity"
+            android:label="Phrases"
+            android:theme="@style/PhraseTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ColorActivity"
+            android:label="Colors"
+            android:theme="@style/ColorTheme"
+            android:parentActivityName=".MainActivity"></activity>
+
         <activity android:name=".SignIn" />
         <activity android:name=".SignUp" />
         <activity
@@ -48,6 +67,12 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAT72QUpbF5_2kRjFHzEEQ6q5wFWSRiIlo" />
+
+        <activity android:name=".activity_GGMAP" />
+        <activity android:name=".Main_Home"></activity>
+        <activity android:name=".Main_Language"></activity>
+
+
 
     </application>
 
