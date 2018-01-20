@@ -158,13 +158,11 @@ public class Home extends AppCompatActivity
             finish();
 
 
-        } else if (id == R.id.nav_place) {
+        } else if (id == R.id.nav_food) {
 
-
-
-        } else if (id == R.id.nav_cart) {
-
-        } else if (id == R.id.nav_orders) {
+//            Intent sssss = new Intent(Home.this,sssssss.class);
+//            startActivity(sssss);
+//            finish();
 
         } else if (id == R.id.nav_log_out) {
 
