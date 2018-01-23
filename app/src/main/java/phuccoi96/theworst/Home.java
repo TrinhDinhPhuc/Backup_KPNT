@@ -160,14 +160,17 @@ public class Home extends AppCompatActivity
 
         } else if (id == R.id.nav_food) {
 
-            Intent activity_GGMAP = new Intent(Home.this,activity_GGMAP.class);
-            startActivity(activity_GGMAP);
-            finish();
+//            Intent activity_GGMAP = new Intent(Home.this,Foodlist.class);
+//            startActivity(activity_GGMAP);
+//            finish();
+            Toast.makeText(Home.this,"No function here",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_log_out) {
 
             //------Logout----
             Intent signin = new Intent(Home.this,SignIn.class);
+            startActivity(signin);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

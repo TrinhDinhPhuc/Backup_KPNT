@@ -79,11 +79,10 @@
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
             android:gravity="bottom"
-            android:textSize="16dp"
+            android:textSize="10dp"
             android:background="@drawable/vietnameselanguage"
-            android:text="                                KhamPha_NhaTrang"
             android:fontFamily="@string/slogan"
-            android:textColor="#96840f"
+            android:textColor="#8f0f96"
 
 
             />

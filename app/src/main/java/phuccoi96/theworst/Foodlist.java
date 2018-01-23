@@ -1,5 +1,6 @@
 package phuccoi96.theworst;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -66,7 +67,19 @@ public class Foodlist extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Foodlist.this, ""+local.getName(), Toast.LENGTH_SHORT).show();
+
+
+                      //  Toast.makeText(Foodlist.this, ""+local.getName(), Toast.LENGTH_SHORT).show();
+
+                        Intent foodList = new Intent(Foodlist.this, FoodDetail.class);
+                        //Food o day la key cua food_in_detail
+                        foodList.putExtra("FoodId",adapter.getRef(position).getKey());
+
+                        startActivity(foodList);
+
+
+
+
                     }
                 });
             }

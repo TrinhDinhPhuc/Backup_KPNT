@@ -5,14 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-/**
- * Created by USER on 1/20/2018.
- */
-
-
 
 public class Main_Language extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

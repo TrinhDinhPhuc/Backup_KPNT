@@ -8,6 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,8 +23,12 @@ import com.squareup.picasso.Picasso;
 import phuccoi96.theworst.Model.Place;
 import phuccoi96.theworst.Model.Place_In_Detail;
 
-public class PlaceDetail extends AppCompatActivity {
 
+/**
+ * Created by USER on 1/24/2018.
+ */
+
+public class PlaceDetail1 extends AppCompatActivity implements OnMapReadyCallback {
     TextView place_name,place_price,place_description;
     ImageView place_image;
     CollapsingToolbarLayout collapsingToolbarLayout;
@@ -31,6 +40,7 @@ public class PlaceDetail extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference places;
 
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +53,7 @@ public class PlaceDetail extends AppCompatActivity {
 
 
         //Init view
-        //numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
+       // numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
         btnSearch = (FloatingActionButton)findViewById(R.id.btnSearch);
 
 
@@ -65,7 +75,15 @@ public class PlaceDetail extends AppCompatActivity {
             getDetailPlace(placeId);
         }
     }
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
 
+        // Add a marker in Sydney, Australia, and move the camera.
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
     private void getDetailPlace(final String placeId) {
 
         places.child(placeId).addValueEventListener(new ValueEventListener() {
@@ -93,6 +111,4 @@ public class PlaceDetail extends AppCompatActivity {
             }
         });
     }
-
-
 }

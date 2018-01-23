@@ -1,13 +1,18 @@
 package phuccoi96.theworst;
 
+import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,10 +20,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import phuccoi96.theworst.Model.Place;
+import phuccoi96.theworst.Model.Food_In_Detail;
 import phuccoi96.theworst.Model.Place_In_Detail;
 
-public class PlaceDetail extends AppCompatActivity {
+/**
+ * Created by USER on 1/24/2018.
+ */
+
+public class FoodDetail extends AppCompatActivity {
+
 
     TextView place_name,place_price,place_description;
     ImageView place_image;
@@ -26,10 +36,13 @@ public class PlaceDetail extends AppCompatActivity {
     FloatingActionButton btnSearch;
     ElegantNumberButton numberButton;
 
-    String placeId="";
+    String foodId="";
 
     FirebaseDatabase database;
-    DatabaseReference places;
+    DatabaseReference food;
+
+    private GoogleMap mMap;
+
 
 
     @Override
@@ -39,11 +52,11 @@ public class PlaceDetail extends AppCompatActivity {
 
         //Firebase
         database = FirebaseDatabase.getInstance();
-        places = database.getReference("Place_In_Detail");
+        food = database.getReference("Food_In_Detail");
 
 
         //Init view
-        //numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
+       // numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
         btnSearch = (FloatingActionButton)findViewById(R.id.btnSearch);
 
 
@@ -59,32 +72,32 @@ public class PlaceDetail extends AppCompatActivity {
 
         //get place Id from Intent
         if(getIntent()!=null)
-            placeId = getIntent().getStringExtra("PlaceId");
-        if(!placeId.isEmpty())
+            foodId = getIntent().getStringExtra("FoodId");
+        if(!foodId.isEmpty())
         {
-            getDetailPlace(placeId);
+            getDetailPlace(foodId);
         }
     }
 
-    private void getDetailPlace(final String placeId) {
+    private void getDetailPlace(final String foodId) {
 
-        places.child(placeId).addValueEventListener(new ValueEventListener() {
+        food.child(foodId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 //cho nay no dung Place chu ko dung Place_In_Detail nhu minh
-                Place_In_Detail place = dataSnapshot.getValue(Place_In_Detail.class);
+                Food_In_Detail food = dataSnapshot.getValue(Food_In_Detail.class);
 
 
                 //Set image
-                Picasso.with(getBaseContext()).load(place.getImage())
+                Picasso.with(getBaseContext()).load(food.getImage())
                         .into(place_image);
 
-                collapsingToolbarLayout.setTitle(place.getName());
+                collapsingToolbarLayout.setTitle(food.getName());
 
-                place_price.setText(place.getPrice());
-                place_name.setText(place.getName());
-                place_description.setText(place.getDescription());
+                place_price.setText(food.getPrice());
+                place_name.setText(food.getName());
+                place_description.setText(food.getDescription());
             }
 
             @Override

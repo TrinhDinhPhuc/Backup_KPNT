@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -150,11 +151,19 @@ public class HomeFood extends AppCompatActivity implements NavigationView.OnNavi
         int id = item.getItemId();
 
         if (id == R.id.nav_menu) {
-            // Handle the camera action
+            Intent homeIntent = new Intent(HomeFood.this,FoodDetail.class);
+            startActivity(homeIntent);
+            finish();
+
+
         } else if (id == R.id.nav_food) {
+            Toast.makeText(HomeFood.this,"No function here",Toast.LENGTH_SHORT).show();
 
 
         } else if (id == R.id.nav_log_out) {
+            Intent signin = new Intent(HomeFood.this,SignIn.class);
+            startActivity(signin);
+            finish();
 
         }
 

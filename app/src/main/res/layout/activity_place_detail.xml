@@ -97,7 +97,6 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/ic_attach_money_black_24dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />
@@ -115,16 +114,16 @@
 
                     </LinearLayout>
 
-                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:id="@+id/number_button"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginBottom="18dp"
-                        app:textSize="8sp"
-                        app:backGroundColor="@color/colorAccent"
-                        ></com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+                    <!--<com.cepheuen.elegantnumberbutton.view.ElegantNumberButton-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:id="@+id/number_button"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--android:layout_marginLeft="8dp"-->
+                        <!--android:layout_marginBottom="18dp"-->
+                        <!--app:textSize="8sp"-->
+                        <!--app:backGroundColor="@color/colorAccent"-->
+                        <!--&gt;</com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>-->
 
                 </LinearLayout>
 

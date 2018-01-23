@@ -38,7 +38,7 @@ public class FamilyActivity extends AppCompatActivity {
         familyList.add(new Word("Brother", "Anh trai", R.drawable.family_son, R.raw.brother, R.drawable.ic_play_arrow_black_24dp));
         familyList.add(new Word("Sister", "Chị gái", R.drawable.family_daughter, R.raw.sister, R.drawable.ic_play_arrow_black_24dp));
         familyList.add(new Word("Husband", "Chồng", R.drawable.family_older_brother, R.raw.husband, R.drawable.ic_play_arrow_black_24dp));
-        familyList.add(new Word("Wife", "Vợ", R.drawable.family_older_sister, R.raw.neededme, R.drawable.ic_play_arrow_black_24dp));
+        familyList.add(new Word("Wife", "Vợ", R.drawable.family_older_sister, R.raw.wife, R.drawable.ic_play_arrow_black_24dp));
         familyList.add(new Word("Daughter", "Con Gái", R.drawable.family_younger_sister, R.raw.daughter, R.drawable.ic_play_arrow_black_24dp));
         familyList.add(new Word("Son", "Con Trai", R.drawable.family_younger_brother, R.raw.son, R.drawable.ic_play_arrow_black_24dp));
 
